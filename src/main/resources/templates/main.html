@@ -1,0 +1,9 @@
+<link rel="stylesheet" th:href="@{/css/main.css}"
+      href="../../css/main.css" />
+
+
+<form action="/add" method="post">
+    Kirjan nimi: <input type="text" name="bookName"/><br/>
+    <input type="submit" value="Lisää"/>
+</form>
+<p th:text="'Kirjat: ' + ${books}"></p>
