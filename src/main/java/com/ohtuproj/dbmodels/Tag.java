@@ -12,31 +12,23 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "book")
-public class Book {
+@Table(name = "tag")
+public class Tag {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "lukuvinkki_id")
-    private String lukuvinkkiId;
-
     @Column(name = "name")
     private String name;
     
     @ManyToMany
-    List<Tag> tags;
+    List<Book> books;
 
-    public Book(){
-
+    public Tag(){
+        
     }
-
-    public Book(String name){
-        this.name = name;
-    }
-
 
     public Integer getId() {
         return id;
@@ -44,14 +36,6 @@ public class Book {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getLukuvinkkiId() {
-        return lukuvinkkiId;
-    }
-
-    public void setLukuvinkkiId(String lukuvinkkiId) {
-        this.lukuvinkkiId = lukuvinkkiId;
     }
 
     public String getName() {
@@ -62,15 +46,14 @@ public class Book {
         this.name = name;
     }
 
-    public List<Tag> getTags() {
-        if (tags == null) {
-            tags = new ArrayList();
+    public List<Book> getBooks() {
+        if (books == null) {
+            books = new ArrayList();
         }
-        return tags;
+        return books;
     }
 
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
-     
 }
