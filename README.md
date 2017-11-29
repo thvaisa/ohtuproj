@@ -4,7 +4,7 @@ Mini project for Ohjelmistotuotanto course
 
 [Definition of Done](DoD.MD)  
 [Travis](https://travis-ci.org/tanlah/ohtuproj)  
-[Backlogit](https://trello.com/b/DbK9plxY/ohtu-miniprojekti)  
+[Backlogit](https://docs.google.com/spreadsheets/d/1e7WpIR60iIR3wJULdHYU7q_ZBmSdOAflVXilaeo4eZ0)  
 
 Techstack:  
 Java  
