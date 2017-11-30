@@ -5,6 +5,6 @@
 <form action="/add" method="post">
     Kirjan nimi: <input type="text" name="bookName"/><br/>
     Tagit: <input type="text" name="tags"/><br/>
-    <input type="submit" value="Lisää"/>
+    <input type="submit" value="Lisää" id="submit-book"/>
 </form>
 <p th:text="'Kirjat: ' + ${books}"></p>
