@@ -1,6 +1,7 @@
 package com.ohtuproj.dbmodels;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -83,8 +84,13 @@ public class Book {
         this.tags = tags;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate()
+    {
+        if(this.date != null) {
+            SimpleDateFormat format = new SimpleDateFormat("MM.dd.yyyy");
+            return format.format(this.date);
+        }
+        return "-";
     }
 
     public void setDate(Date date) {

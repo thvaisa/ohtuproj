@@ -11,6 +11,9 @@
         <a th:href="@{/}">Takaisin</a>
         <section th:each="book: ${books}" >
             <h3 th:text="${book.name}"></h3>
+            <span>Kirjoittaja:</span><span th:text="${book.author}"></span>
+            <br/>
+            <span>Julkaistu:</span><span th:text="${book.date}"></span>
             <ul>
                 <li th:each="tag: ${book.tags}">
                     <span th:text="${tag.name}"></span>
