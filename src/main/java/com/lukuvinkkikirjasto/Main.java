@@ -1,15 +1,14 @@
-package com.ohtuproj;
+package com.lukuvinkkikirjasto;
 
-
-import com.ohtuproj.controllers.AddController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.*;
 
 @SpringBootApplication
 public class Main {
 
-    public static void main(String[] args) throws Exception {
-        System.out.println("Running..");
+    public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
 }

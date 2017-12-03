@@ -1,4 +1,4 @@
-package test.ohtuproj;
+package com.lukuvinkkikirjasto;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

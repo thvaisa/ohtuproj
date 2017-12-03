@@ -1,6 +1,5 @@
-package com.test.ohtuproj.db;
+package com.lukuvinkkikirjasto.domain;
 
-import com.ohtuproj.dbmodels.Book;
 import org.h2.tools.RunScript;
 import org.hibernate.Session;
 import org.hibernate.jdbc.Work;
@@ -22,8 +21,11 @@ import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import static junit.framework.TestCase.assertNotNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-public class DbTest {
+public class BookTest {
 
     protected static EntityManagerFactory emf;
     protected static EntityManager em;
@@ -51,7 +53,7 @@ public class DbTest {
     public void testFind() {
         // Add a new book "test" to the db
         em.getTransaction().begin();
-        em.persist(new Book("test"));
+        em.persist(new Book());
         em.getTransaction().commit();
         Book book = em.find(Book.class, 1);
         assertNotNull(book);

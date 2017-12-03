@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Header template</title>
+    </head>
+    <body>
+
+        <header th:fragment="header">
+            <ul>
+                <li><a th:href="@{/}">Koti</a></li>
+                <li><a th:href="@{/books}">Kirjat</a></li>
+            </ul>
+        </header>
+        <form action="@{/add}" th:method="GET">
+            <input type="submit" value="Lisää kirja"/>
+        </form>
+    </body>
+</html>

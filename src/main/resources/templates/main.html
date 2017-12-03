@@ -8,14 +8,8 @@
     </head>
 
     <body>
-         <a th:href="@{/books}">Kirjat</a>
-        <form action="/add" method="post">
-            Kirjan nimi: <input type="text" name="bookName"/><br/>
-            Kirjoittaja: <input type="text" name="bookAuthor"/><br/>
-            Julkaisupäivämäärä: <input type="date" name="bookDate"/><br/>
-            ISBN: <input type="text" name="bookISBN"/><br/>
-            Tagit: <input type="text" name="tags"/><br/>
-            <input type="submit" value="Lisää" id="submit-book"/>
-        </form>
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
     </body>
 </html>
