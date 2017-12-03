@@ -10,10 +10,10 @@
     <body>
         <a th:href="@{/}">Takaisin</a>
         <section th:each="book: ${books}" >
-            <h3 th:text="book.name: ${books}">name</h3>
+            <h3 th:text="${book.name}"></h3>
             <ul>
                 <li th:each="tag: ${book.tags}">
-                    <span th:text="${tag.name}">name</span>
+                    <span th:text="${tag.name}"></span>
                 </li>
             </ul>
         </section>

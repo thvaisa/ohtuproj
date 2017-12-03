@@ -32,8 +32,8 @@ public class AddController {
 
     @RequestMapping("/books")
     String books(Model model) {
-        model.addAttribute("exams", this.bookRepository.findAll());
-        return "exams";
+        model.addAttribute("books", this.bookRepository.findAll());
+        return "books";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
