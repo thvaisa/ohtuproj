@@ -30,14 +30,13 @@ public class DbTest {
 
     @BeforeClass
     public static void init() throws FileNotFoundException, SQLException {
-        // Create H2 dba entity manager factory
-        emf = Persistence.createEntityManagerFactory("test");
-        em = emf.createEntityManager();
     }
 
     @Before
     public void initializeDatabase(){
-        em.clear();
+        // Create H2 dba entity manager factory
+        emf = Persistence.createEntityManagerFactory("test");
+        em = emf.createEntityManager();
     }
 
 
