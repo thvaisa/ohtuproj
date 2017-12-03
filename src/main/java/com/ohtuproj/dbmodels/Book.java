@@ -2,6 +2,7 @@ package com.ohtuproj.dbmodels;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +24,15 @@ public class Book {
     @Column(name = "lukuvinkki_id")
     private String lukuvinkkiId;
 
+    @Column(name = "date")
+    private Date date;
+    
+    @Column(name = "author")
+    private String author;
+    
+    @Column(name = "ISBN")
+    private String ISBN;
+    
     @Column(name = "name")
     private String name;
     
@@ -71,6 +81,30 @@ public class Book {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
     }
      
 }

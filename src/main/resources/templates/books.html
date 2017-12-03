@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Kirjat</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}"
+              href="../../css/main.css" />
+    </head>
+
+    <body>
+        <a th:href="@{/}">Takaisin</a>
+        <section th:each="book: ${books}" >
+            <h3 th:text="book.name: ${books}">name</h3>
+            <ul>
+                <li th:each="tag: ${book.tags}">
+                    <span th:text="${tag.name}">name</span>
+                </li>
+            </ul>
+        </section>
+    </body>
+</html
