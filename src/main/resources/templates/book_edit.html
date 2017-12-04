@@ -14,7 +14,7 @@
         <h1>Muokkaa kirjaa</h1>
         <form th:action="@{/book/{bookId}/edit(bookId=${book.id})}" th:method="POST">
             Kirjan nimi: <input type="text" name="bookName" th:value="${book.name}"/><br/>
-            Kirjoittaja: <input type="text" name="bookAuthor" th:value="${book.date}"/><br/>
+            Kirjoittaja: <input type="text" name="bookAuthor" th:value="${book.author}"/><br/>
             Julkaisupäivämäärä: <input type="text" name="bookDate" th:value="${book.date}"/><br/>
             ISBN: <input type="text" name="bookISBN" th:value="${book.ISBN}"/><br/>
             Tagit: <input type="text" name="tags" th:value="${tags}"/><br/>
