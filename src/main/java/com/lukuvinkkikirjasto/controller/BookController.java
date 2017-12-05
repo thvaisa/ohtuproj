@@ -9,8 +9,10 @@ import com.lukuvinkkikirjasto.domain.Book;
 import com.lukuvinkkikirjasto.domain.Tag;
 import com.lukuvinkkikirjasto.repository.BookRepository;
 import com.lukuvinkkikirjasto.repository.TagRepository;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +24,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /**
- *
  * @author Burilas
  */
 @Controller
@@ -47,7 +48,7 @@ public class BookController {
     }
 
     @GetMapping("/book/{id}/edit")
-    public String viewEditBook(Model model, @PathVariable Long id) {
+    public String editBook(Model model, @PathVariable Long id) {
         Book book = this.bookRepository.findOne(id);
 
         String tagsString = "";
@@ -76,10 +77,9 @@ public class BookController {
         List<String> bookAuthor = formData.get("bookAuthor");
         Book book = bookRepository.findOne(id);
         if (book != null) {
-            book.setName(bookName.get(0));
-            book.setDate(bookDate.get(0));
-            book.setAuthor(bookAuthor.get(0));
-            book.setISBN(bookISBN.get(0));
+
+            book = createBook(bookName, bookDate, bookISBN, bookAuthor);
+
 
             List<Tag> tags = book.getTags();
             for (Tag t : tags) {
@@ -138,13 +138,10 @@ public class BookController {
         List<String> bookAuthor = formData.get("bookAuthor");
         if (bookName != null) {
             // Add new book using name
-            Book book = new Book();
-            book.setName(bookName.get(0));
-            book.setDate(bookDate.get(0));
-            book.setAuthor(bookAuthor.get(0));
-            book.setISBN(bookISBN.get(0));
+            Book book = createBook(bookName, bookDate, bookISBN, bookAuthor);
 
             bookRepository.save(book);
+
             List<Tag> bookTags = new ArrayList();
             // Split the tags string and connect them to book
             if (tagsList != null) {
@@ -175,9 +172,19 @@ public class BookController {
         return "redirect:/books";
     }
 
+
     @GetMapping("/")
     public String main(Model model) {
         //Pageable pageable = PageRequest.of(0, Integer.MAX_VALUE, Sort.Direction.DESC, "examDate");
         return "main";
+    }
+
+    private Book createBook(List<String> bookName, List<String> bookDate, List<String> bookISBN, List<String> bookAuthor) {
+        Book book = new Book();
+        book.setName(bookName.get(0));
+        book.setDate(bookDate.get(0));
+        book.setAuthor(bookAuthor.get(0));
+        book.setISBN(bookISBN.get(0));
+        return book;
     }
 }
