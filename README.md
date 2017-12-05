@@ -14,4 +14,3 @@ Techstack:
 Java
 Spring
 Postgres
-
