@@ -12,8 +12,6 @@ Mini project for Ohjelmistotuotanto course
 
 Techstack:  
 Java
-Spring  
+Spring
 Postgres
-  
-
 
