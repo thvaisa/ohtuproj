@@ -10,10 +10,10 @@
             <p>header with links etc</p>
         </header>
         <form th:action="@{/book/{bookId}/edit(bookId=${book.id})}" th:method="GET">
-            <input type="submit" value="Muokkaa" th:id="${'edit-' + book.id}"/>
+            <input class="edit-button" type="submit" value="Muokkaa" th:id="${'edit-' + book.id}"/>
         </form><br/>
         <form th:action="@{/book/{bookId}(bookId=${book.id})}" th:method="DELETE">
-            <input type="submit" value="Poista" th:id="${'remove-' + book.id}"/>
+            <input class="delete-button" type="submit" value="Poista" th:id="${'remove-' + book.id}"/>
         </form><br/>
 
         <h2 th:text="${book.name}"></h2>
