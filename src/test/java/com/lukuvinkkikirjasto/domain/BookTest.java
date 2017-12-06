@@ -44,7 +44,7 @@ public class BookTest {
 
     @Test
     public void testFindEmpty() {
-        Book book = em.find(Book.class, 1);
+        Book book = em.find(Book.class, 1l);
         assertNull(book);
     }
 
@@ -55,7 +55,7 @@ public class BookTest {
         em.getTransaction().begin();
         em.persist(new Book());
         em.getTransaction().commit();
-        Book book = em.find(Book.class, 1);
+        Book book = em.find(Book.class, 1l);
         assertNotNull(book);
     }
 
