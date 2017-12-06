@@ -26,4 +26,24 @@ public class Book extends AbstractPersistable<Long> {
 
     @ManyToMany
     private List<Tag> Tags;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public List<Tag> getTags() {
+        return Tags;
+    }
 }

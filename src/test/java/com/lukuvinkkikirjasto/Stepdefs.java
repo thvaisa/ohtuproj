@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootContextLoader;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,18 +19,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.*;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-        loader = SpringBootContextLoader.class,
-        classes = Main.class
-)
-@SpringBootTest
+
 public class Stepdefs {
 
-    int port = 8090;
+    int port = 8080;
 
 
     static {
+        SpringApplication.run(Main.class, "");
         ChromeDriverManager.getInstance().setup();
     }
     WebDriver driver = new ChromeDriver();
@@ -55,7 +52,7 @@ public class Stepdefs {
     }
 
 
-    @Then("^a new book with the name \"([^\"]*)\" is added")
+    @Then("^a new book with name \"([^\"]*)\" is added$")
     public void containsName(String name) throws Throwable {
         assertTrue(driver.getPageSource().contains(name));
     }
