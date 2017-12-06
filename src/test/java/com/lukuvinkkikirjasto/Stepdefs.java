@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootContextLoader;
@@ -37,7 +38,9 @@ public class Stepdefs {
         context = SpringApplication.run(Main.class, "");
         ChromeDriverManager.getInstance().setup();
     }
-    WebDriver driver = new ChromeDriver();
+    //WebDriver driver = new ChromeDriver();
+    WebDriver driver = new HtmlUnitDriver();
+
     String baseUrl = "http://localhost:" + port + "/add";
 
     @After
