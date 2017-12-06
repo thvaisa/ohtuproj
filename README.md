@@ -6,7 +6,9 @@ Mini project for Ohjelmistotuotanto course
 
 [Definition of Done](DoD.MD)  
 [Travis](https://travis-ci.org/tanlah/ohtuproj)
-[Backlogit](https://docs.google.com/spreadsheets/d/1e7WpIR60iIR3wJULdHYU7q_ZBmSdOAflVXilaeo4eZ0)
+
+[Sprint 3 backlog](https://docs.google.com/spreadsheets/d/1e7WpIR60iIR3wJULdHYU7q_ZBmSdOAflVXilaeo4eZ0)
+[Product backlog](https://docs.google.com/spreadsheets/d/1CL8L6jyqMW52gyFKJSMc-5yj4gn6p1cZnU6dSnIARdU)  
 
 [How to install Heroku](doc/heroku_instructions.md)
 
