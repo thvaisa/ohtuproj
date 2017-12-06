@@ -82,33 +82,35 @@ public class BookController {
 
 
             List<Tag> tags = book.getTags();
-            for (Tag t : tags) {
-                List<Book> b = t.getBooks();
-                b.remove(book);
-                t.setBooks(b);
-                this.tagRepository.save(t);
-            }
-            List<Tag> bookTags = new ArrayList();
-            if (tagsList != null) {
-                String[] tagString = tagsList.get(0).split(" ");
-                for (int i = 0; i < tagString.length; i++) {
-                    Tag tag = tagRepository.findByName(tagString[i]);
-                    // check if tag exists, create if not
-                    if (tag == null) {
-                        tag = new Tag();
-                        tag.setName(tagString[i]);
-                    }
-                    bookTags.add(tag);
-                    List<Book> tagBooks = tag.getBooks();
-                    if (tagBooks == null) {
-                        tagBooks = new ArrayList();
-                    }
-                    tagBooks.add(book);
-                    tag.setBooks(tagBooks);
-                    tagRepository.save(tag);
+            if(tags != null) {
+                for (Tag t : tags) {
+                    List<Book> b = t.getBooks();
+                    b.remove(book);
+                    t.setBooks(b);
+                    this.tagRepository.save(t);
                 }
+                List<Tag> bookTags = new ArrayList();
+                if (tagsList != null) {
+                    String[] tagString = tagsList.get(0).split(" ");
+                    for (int i = 0; i < tagString.length; i++) {
+                        Tag tag = tagRepository.findByName(tagString[i]);
+                        // check if tag exists, create if not
+                        if (tag == null) {
+                            tag = new Tag();
+                            tag.setName(tagString[i]);
+                        }
+                        bookTags.add(tag);
+                        List<Book> tagBooks = tag.getBooks();
+                        if (tagBooks == null) {
+                            tagBooks = new ArrayList();
+                        }
+                        tagBooks.add(book);
+                        tag.setBooks(tagBooks);
+                        tagRepository.save(tag);
+                    }
+                }
+                book.setTags(bookTags);
             }
-            book.setTags(bookTags);
             bookRepository.save(book);
         }
         // Return to mainpage

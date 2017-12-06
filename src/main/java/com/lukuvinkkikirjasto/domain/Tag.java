@@ -16,5 +16,21 @@ public class Tag extends AbstractPersistable<Long> {
     private String name;
     
     @ManyToMany
-    private List<Book> Books;
+    private List<Book> books;
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

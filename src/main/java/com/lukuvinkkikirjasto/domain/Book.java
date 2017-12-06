@@ -25,7 +25,7 @@ public class Book extends AbstractPersistable<Long> {
     private String date;
 
     @ManyToMany
-    private List<Tag> Tags;
+    private List<Tag> tags;
 
     public String getName() {
         return name;
@@ -44,6 +44,26 @@ public class Book extends AbstractPersistable<Long> {
     }
 
     public List<Tag> getTags() {
-        return Tags;
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags){
+        this.tags = tags;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
