@@ -78,8 +78,19 @@ public class BookController {
         Book book = bookRepository.findOne(id);
         if (book != null) {
 
-            book = createBook(bookName, bookDate, bookISBN, bookAuthor);
+            if(bookName != null){
+                book.setName(bookName.get(0));
+            }
 
+            if(bookDate != null){
+                book.setDate(bookDate.get(0));
+            }
+            if(bookISBN != null){
+                book.setISBN(bookISBN.get(0));
+            }
+            if(bookAuthor != null){
+                book.setAuthor(bookAuthor.get(0));
+            }
 
             List<Tag> tags = book.getTags();
             if(tags != null) {
