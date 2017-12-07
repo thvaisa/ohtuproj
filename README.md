@@ -16,5 +16,3 @@ Techstack:
 Java
 Spring
 Postgres
-
-Tämä on tyhjä rivi
